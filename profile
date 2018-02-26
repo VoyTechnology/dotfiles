@@ -28,7 +28,7 @@ alias nt="termite . &; disown &> /dev/null"
 alias pi="ssh 192.168.0.12"
 alias rb="ssh redbrick.dcu.ie"
 # FIXME alias chat="ssh 192.168.0.12 -t \"chat\""
-alias update="yaourt -Syyua"
+alias update="yaourt -Syyua --noconfirm"
 
 # Current project CD
 alias heracles="cd $HOME/code/github.com/cpssd/heracles"
