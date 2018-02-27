@@ -19,9 +19,8 @@ monitor = DP-1
 type = internal/i3
 pin-workspaces = true
 
-modules-left = i3
-modules-center = clock
-modules-right = disk network cpu ram volume power
+modules-left = i3 title
+modules-right = disk network cpu ram volume clock power
 
 width = 100%
 height = 24
@@ -86,6 +85,11 @@ label-urgent = %index% %icon%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-padding = ${measurement.padding}
+
+[module/title]
+type = internal/xwindow
+label = %title%
+format-padding = ${measurement.padding}
 
 [module/clock]
 type = internal/date
