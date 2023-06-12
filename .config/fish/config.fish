@@ -9,4 +9,4 @@ end
 
 rtx activate fish | source
 
-alias dotfiles='git --git-dir=/Users/voy/.dotfiles --work-tree=/Users/voy'
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
