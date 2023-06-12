@@ -1,1 +1,22 @@
 .dotfiles
+
+# Ignore directories which are most likely to include some sort of credentials or secrets
+.kube/
+.aws/
+.gh/
+.terraform.d/
+.ssh/
+
+# Ignore typical homedir directories
+Documents/
+Downloads/
+Movies/
+Music/
+Videos/
+Pictures/
+Images/
+Public/
+Library/
+Desktop/
+
+# ignore the code directory as all the code is typically tracked using its own git repos

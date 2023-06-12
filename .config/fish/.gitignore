@@ -1,0 +1,5 @@
+# Ignore everything that is not the fish config file
+
+fish_plugins
+fish_variables
+*/
