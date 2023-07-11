@@ -26,7 +26,9 @@ rtx activate fish | source
 # GPG setup
 export GPG_TTY=$(tty)
 
-# Kubernetes Aliases
+# Kubernetes Config
 alias k="kubectl -n"
+set -gx PATH $PATH $HOME/.krew/bin
+
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
