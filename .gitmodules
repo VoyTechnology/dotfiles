@@ -1,0 +1,3 @@
+[submodule "/Users/voy/.config/nvim"]
+	path = /Users/voy/.config/nvim
+	url = https://github.com/NvChad/NvChad
