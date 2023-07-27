@@ -32,3 +32,15 @@ set -gx PATH $PATH $HOME/.krew/bin
 
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+# dsf allows to simplify some of the common git commands
+function dsf -a action
+  set branch $(git rev-parse --abbrev-ref HEAD)
+  
+  switch $action
+    case sync
+      git stash && git switch main && git pull && git switch $branch && git rebase -i main && git stash pop
+    case export
+      git push --force-with-lease && gh pr create
+  end
+end
