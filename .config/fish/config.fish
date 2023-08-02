@@ -27,6 +27,11 @@ end
 # Setup rtx for application management
 rtx activate fish | source
 
+# Setup direnv if installed
+if type -q direnv
+  direnv hook fish | source
+end
+
 # GPG setup
 export GPG_TTY=$(tty)
 
