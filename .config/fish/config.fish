@@ -20,6 +20,10 @@ if type -q fzf
   alias fs="fzf --bind 'enter:become(code {})'"
 end
 
+if type -q ack
+  alias cs="ack"
+end
+
 # Setup rtx for application management
 rtx activate fish | source
 
