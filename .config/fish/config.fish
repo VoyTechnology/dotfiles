@@ -48,7 +48,7 @@ function dsf -a action
   
   switch $action
     case sync
-      git stash && git switch main && git pull && git switch $branch && git rebase -i main && git stash pop
+      git switch main && git pull && git switch $branch && git rebase -i main
     case export
       git push --force-with-lease && gh pr create
   end
