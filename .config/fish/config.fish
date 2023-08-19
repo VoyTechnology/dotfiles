@@ -50,6 +50,12 @@ function dsf -a action
     case sync
       git switch main && git pull && git switch $branch && git rebase -i main
     case export
+      if test $branch = main
+        echo "Can't push to main!"
+        return
+      end
+
       git push --force-with-lease && gh pr create
   end
 end
+
