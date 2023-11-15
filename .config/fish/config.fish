@@ -40,7 +40,7 @@ export GPG_TTY=$(tty)
 # Kubernetes Config
 alias k="kubectl -n"
 set -gx PATH $PATH $HOME/.krew/bin
-
+export KUBECONFIG=$(find ~/.kube/config.d -type f | xargs | tr -s '[:blank:]' ':')
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
