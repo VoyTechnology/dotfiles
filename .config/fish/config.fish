@@ -11,6 +11,7 @@ end
 
 if type -q nvim
   alias vim=nvim
+  export EDITOR=nvim
 end
 
 if type -q bat
