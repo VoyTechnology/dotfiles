@@ -26,6 +26,10 @@ if type -q ack
   alias cs="ack"
 end
 
+if type -q zoxide
+  zoxide init fish | source
+end
+
 # Setup rtx for application management
 rtx activate fish | source
 
