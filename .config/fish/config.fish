@@ -30,8 +30,10 @@ if type -q zoxide
   zoxide init fish | source
 end
 
-# Setup rtx for application management
-rtx activate fish | source
+# Setup mise for binary versioning in a folder
+if type -q mise
+  mise activate fish | source
+end
 
 # Setup direnv if installed
 if type -q direnv
