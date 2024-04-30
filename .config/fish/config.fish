@@ -48,6 +48,10 @@ alias k="kubectl -n"
 set -gx PATH $PATH $HOME/.krew/bin
 export KUBECONFIG=$(find ~/.kube/config.d -type f | xargs | tr -s '[:blank:]' ':')
 
+# Go Config
+set -x -U GOPATH $HOME/.go
+set -gx PATH $PATH $GOPATH/bin
+
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # dsf allows to simplify some of the common git commands
