@@ -61,6 +61,9 @@ function dsf -a action
   switch $action
     case sync
       git switch main && git pull && git switch $branch && git rebase -i main
+      git branch --merged | grep -v "^\*\\|main" | xargs -n 1 git branch -d
+      git remote prune origin
+ 
     case export
       if test $branch = main
         echo "Can't push to main!"
