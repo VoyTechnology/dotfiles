@@ -71,6 +71,9 @@ function dsf -a action
       end
 
       git push --force-with-lease && gh pr create
+
+    case prs
+      gh pr list --author "@me"
   end
 end
 
