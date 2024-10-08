@@ -77,3 +77,5 @@ function dsf -a action
   end
 end
 
+# MacOS only I assume
+alias dns-flush-cache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
