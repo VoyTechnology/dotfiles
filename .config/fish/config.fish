@@ -3,8 +3,10 @@ if status is-interactive
   # eval (zellij setup --generate-auto-start fish | string collect)
 end
 
-if type -q exa
-  alias ls="exa --long --header --git --icons"
+export GPG_TTY=$(tty)
+
+if type -q eza
+  alias ls="eza --long --header --git --icons"
   alias la="ls -a"
 end
 
