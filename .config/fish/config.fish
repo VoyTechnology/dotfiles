@@ -81,3 +81,6 @@ end
 
 # MacOS only I assume
 alias dns-flush-cache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+
+# Load Brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
