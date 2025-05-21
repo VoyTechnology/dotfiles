@@ -54,6 +54,9 @@ export KUBECONFIG=$(find ~/.kube/config.d -type f | xargs | tr -s '[:blank:]' ':
 set -x -U GOPATH $HOME/.go
 set -gx PATH $PATH $GOPATH/bin
 
+# Rust
+source "$HOME/.cargo/env.fish"
+
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # dsf allows to simplify some of the common git commands
