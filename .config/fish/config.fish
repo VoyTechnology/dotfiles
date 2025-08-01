@@ -34,7 +34,7 @@ end
 
 # Setup mise for binary versioning in a folder
 if type -q mise
-  mise activate fish | source
+ mise activate fish | source
 end
 
 # Setup direnv if installed
@@ -65,10 +65,17 @@ function dsf -a action
   
   switch $action
     case sync
-      git switch main && git pull && git switch $branch && git rebase -i main
+      git switch main && git pull
       git branch --merged | grep -v "^\*\\|main" | xargs -n 1 git branch -d
       git remote prune origin
- 
+      if test $branch != main
+        if git show-ref --verify --quiet refs/heads/$branch
+          git switch $branch && git rebase -i main
+        else
+          echo "Branch '$branch' was deleted (merged)"
+        end
+      end
+
     case export
       if test $branch = main
         echo "Can't push to main!"
@@ -87,3 +94,7 @@ alias dns-flush-cache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSRespo
 
 # Load Brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
